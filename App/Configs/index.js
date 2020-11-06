@@ -1,5 +1,5 @@
 const env = require('dotenv');
-const properties = require('@package.json');
+const properties = require('@Base/package.json');
 
 env.config();
 
@@ -17,13 +17,13 @@ module.exports = {
         host: process.env.DBHOST || `localhost`,
         user: process.env.DBUSER || `root`,
         password: process.env.DBPASSWORD || ``,
-        database: process.env.DB || 'timah',
+        database: process.env.DB || 'papanko',
         port: process.env.DBPORT || 3306, /*PORT || STREAM*/
         type: process.env.DBTYPE || 'mysql',
     },
     date: newdate,
     version: process.env.version || 'v1',
     cronColor: ['\x1b[42m%s\x1b[0m'],
-    versionApi: properties.version,
-    mainRoute: properties.main
+    versionApi: properties.version || '0.0.1',
+    mainRoute: properties.main || 'index.js'
 }
